@@ -2,12 +2,10 @@ steps:
 #Running test cases
 - name: maven:3-jdk-11
     entrypoint: mvn
-    dir: 'server'
     args: ["test"]
 #Running **mvn clean install** and skipping test cases
   - name: maven:3-jdk-11
     entrypoint: mvn
-    dir: 'server'
     args: ["clean", "install", "-Dmaven.test.skip=true"]
 #Build image
 - name: 'gcr.io/cloud-builders/docker'
